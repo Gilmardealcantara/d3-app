@@ -1,16 +1,20 @@
+
 <!doctype html>
 <meta charset="utf-8">
+<title>D3plus line plot - Storybench How To</title>
 
 <!-- load D3js -->
 <script src="http://www.d3plus.org/js/d3.js"></script>
 
 <!-- load D3plus after D3js -->
-<script src="http://www.d3plus.org/js/d3plus.js"></script>
+<script src="http://www.d3plus.org/js/d3plus.js"></script> 
 
 <!-- create container element for visualization -->
-<div id="viz"></div>
+<div id="viz"></div> 
+<div id="viz2"></div>    
+<div id="viz3"></div> 
 
-<script>
+<script type="text/javascript">
   // sample data array
   var sample_data = [
     {"year": 1991, "name":"alpha", "value": 17},
@@ -28,14 +32,95 @@
     {"year": 1994, "name":"gamma", "value": 35},
     {"year": 1995, "name":"gamma", "value": 40}
   ]
+
+ var attributes = [
+    {"name": "concussions", "hex": "#0000ff"}
+  ]
+
   // instantiate d3plus
   var visualization = d3plus.viz()
-    .container("#viz")  // container DIV to hold the visualization
+    .container("#viz2")  // container DIV to hold the visualization
     .data(sample_data)  // data to use with the visualization
-    .type("line")       // visualization type
+    .type("bar")       // visualization type
     .id("name")         // key for which our data is unique on
     .text("name")       // key to use for display text
     .y("value")         // key to use for y-axis
     .x("year")          // key to use for x-axis
+    .attrs(attributes)
+    .color("hex")
+    .height(1000)
+    .width(800)
     .draw()             // finally, draw the visualization!
+
+
+
+
+//---------------------------------------------------------------TREE_MAP------------
+
+
+  var nodes = [
+    {"id": "alpha"},
+    {"id": "beta"},
+    {"id": "gamma"}
+  ];
+  var edges = [
+    {"strength": 2, "source": 0, "target": 2},
+    {"strength": 1, "source": 1, "target": 2},
+    {"strength": 1, "source": 2, "target": 0},
+    {"strength": 3, "source": 2, "target": 1}
+  ];
+  var visualization = d3plus.viz()
+    .container("#viz3")
+    .edges({
+      "strength": "strength",
+      "value": edges
+    })
+    .focus({
+      "tooltip": false,
+      "value": "gamma"
+    })
+    .id("id")
+    .nodes(nodes)
+    .size(100)
+    .type("sankey")
+    .height(1000)
+    .width(1000)    
+    .draw();
+
+
+
+  var sample_data = [
+    {"value": 100, "name": "alpha", "group": "group 1"},
+    {"value": 70, "name": "beta", "group": "group 2"},
+    {"value": 40, "name": "gamma", "group": "group 2"},
+    {"value": 15, "name": "delta", "group": "group 2"},
+    {"value": 5, "name": "epsilon", "group": "group 1"},
+    {"value": 1, "name": "zeta", "group": "group 1"}
+  ]
+  var visualization = d3plus.viz()
+    .container("#viz")
+    .data(sample_data)
+    .type("tree_map")
+    .id(["group","name"])
+    .depth(1)
+    .size("value")
+    .ui([
+      {
+        "method": function(){
+          visualization.csv(["name", "value"])  // array only downloads the specified keys as columns
+        },
+        "value": ["Click to Download CSV File Containing Name and Value"]
+      }
+    ])
+    .height(600)
+    .width("80%")      
+    .draw()
+
 </script>
+
+<style>
+div {
+    float: left;
+}
+
+</style>
