@@ -10,5 +10,10 @@ def index():
 def graphic():
     return render_template('graphic2.html')
 
+@app.route('/graphic/stacked/')
+def staked():
+    return render_template('stacked.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True)    
