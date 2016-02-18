@@ -4,15 +4,11 @@ app = Flask('d3-app')
 
 @app.route('/') 
 def index():    
+    return render_template('index.html')
+
+@app.route('/stacked') 
+def stacked():    
     return render_template('maps.html')
-
-@app.route('/graphic/')
-def graphic():
-    return render_template('graphic2.html')
-
-@app.route('/graphic/stacked/')
-def staked():
-    return render_template('stacked.html')
 
 
 if __name__ == "__main__":
