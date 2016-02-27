@@ -4,7 +4,7 @@ app = Flask('d3-app')
 
 @app.route('/') 
 def index():    
-    return render_template('maps.html')
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True)    

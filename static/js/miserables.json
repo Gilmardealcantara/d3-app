@@ -1,6 +1,100 @@
-[{
-    "2002" : "5",
-    "2003" : "6",
-    "2004" : "7",
-    "2006" : "8"   
-}]
+{
+	"ano_2002" : 
+	{
+		"janeiro" : "5",
+		"fevereiro" : "6",
+		"marco" : "7",
+		"abril" : "8",
+		"maio" : "5",
+		"junho" : "6",
+		"julho" : "5",
+		"setembro" : "5",
+		"outubro" : "5",
+		"novembro" : "5",
+		"dezembro" : "75"	
+	},
+	"ano_2003" : 
+	{
+		"janeiro" : "22",
+		"fevereiro" : "22",
+		"marco" : "22",
+		"abril" : "22",
+		"maio" : "22",
+		"junho" : "22",
+		"julho" : "22",
+		"setembro" : "22",
+		"outubro" : "22",
+		"novembro" : "22",
+		"dezembro" : "22"		
+	},
+	"ano_2004" : 
+	{
+		"janeiro" : "5",
+		"fevereiro" : "6",
+		"marco" : "7",
+		"abril" : "8",
+		"maio" : "5",
+		"junho" : "6",
+		"julho" : "7",
+		"setembro" : "8",
+		"outubro" : "5",
+		"novembro" : "6",
+		"dezembro" : "7"		
+	},
+	"ano_2005" : 
+	{
+		"janeiro" : "5",
+		"fevereiro" : "6",
+		"marco" : "7",
+		"abril" : "8",
+		"maio" : "5",
+		"junho" : "6",
+		"julho" : "7",
+		"setembro" : "8",
+		"outubro" : "5",
+		"novembro" : "6",
+		"dezembro" : "7"		
+	},
+	"ano_2006" : 
+	{
+		"janeiro" : "5",
+		"fevereiro" : "6",
+		"marco" : "7",
+		"abril" : "8",
+		"maio" : "5",
+		"junho" : "6",
+		"julho" : "7",
+		"setembro" : "8",
+		"outubro" : "5",
+		"novembro" : "6",
+		"dezembro" : "7"		
+	},
+	"ano_2007" : 
+	{
+		"janeiro" : "52",
+		"fevereiro" : "52",
+		"marco" : "52",
+		"abril" : "52",
+		"maio" : "52",
+		"junho" : "52",
+		"julho" : "52",
+		"setembro" : "52",
+		"outubro" : "52",
+		"novembro" : "52",
+		"dezembro" : "52"		
+	},
+	"ano_2008" : 
+	{
+		"janeiro" : "5",
+		"fevereiro" : "6",
+		"marco" : "7",
+		"abril" : "8",
+		"maio" : "5",
+		"junho" : "6",
+		"julho" : "7",
+		"setembro" : "8",
+		"outubro" : "5",
+		"novembro" : "6",
+		"dezembro" : "7"		
+	}
+}
