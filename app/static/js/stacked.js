@@ -13,14 +13,9 @@ var stackedGraphic = ( function (){
       var parseDate = d3.time.format("%y-%b-%d").parse,
           formatPercent = d3.format(".0%");
       
-<<<<<<< HEAD
       var x = d3.scale.ordinal()
           .rangeRoundBands([0, width]);
       
-=======
-      var x = d3.time.scale()
-          .range([0, width]);
->>>>>>> 8568cbe84637455860d1fe51d026f8ecd3be1c58
       var y = d3.scale.linear()
           .range([height, 0]);
 
@@ -51,17 +46,9 @@ var stackedGraphic = ( function (){
 
       d3.json("/static/json/data.json", function(error, data) {
         if (error) throw error;
-<<<<<<< HEAD
         
         color.domain(d3.keys(data[0]).filter(function(key) { return key !== "year"; }));
         
-=======
-        color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
-        data.forEach(function(d) {
-          d.date = parseDate(d.date);
-        });
-      
->>>>>>> 8568cbe84637455860d1fe51d026f8ecd3be1c58
         var browsers = stack(color.domain().map(function(name) {
           return {
             name: name,
@@ -71,11 +58,7 @@ var stackedGraphic = ( function (){
           };
         }));
       
-<<<<<<< HEAD
         x.domain(data.map(function(d) { return d.year; }));
-=======
-        x.domain(d3.extent(data, function(d) { return d.date; }));
->>>>>>> 8568cbe84637455860d1fe51d026f8ecd3be1c58
       
         var browser = svg.selectAll(".browser")
             .data(browsers)
@@ -98,11 +81,7 @@ var stackedGraphic = ( function (){
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
             .call(xAxis);
-<<<<<<< HEAD
 
-=======
-               
->>>>>>> 8568cbe84637455860d1fe51d026f8ecd3be1c58
 
         svg.append("g")
             .attr("class", "y axis")
