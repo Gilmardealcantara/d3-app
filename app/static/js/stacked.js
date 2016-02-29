@@ -13,8 +13,9 @@ var stackedGraphic = ( function (){
       var parseDate = d3.time.format("%y-%b-%d").parse,
           formatPercent = d3.format(".0%");
       
-      var x = d3.time.scale()
-          .range([0, width]);
+      var x = d3.scale.ordinal()
+          .rangeRoundBands([0, width]);
+      
       var y = d3.scale.linear()
           .range([height, 0]);
 
@@ -29,7 +30,7 @@ var stackedGraphic = ( function (){
           .tickFormat(formatPercent);
       
       var area = d3.svg.area()
-          .x(function(d) { return x(d.date); })
+          .x(function(d) { return x(d.year); })
           .y0(function(d) { return y(d.y0); })
           .y1(function(d) { return y(d.y0 + d.y); });
       
@@ -45,21 +46,19 @@ var stackedGraphic = ( function (){
 
       d3.json("/static/json/data.json", function(error, data) {
         if (error) throw error;
-        color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
-        data.forEach(function(d) {
-          d.date = parseDate(d.date);
-        });
-      
+        
+        color.domain(d3.keys(data[0]).filter(function(key) { return key !== "year"; }));
+        
         var browsers = stack(color.domain().map(function(name) {
           return {
             name: name,
             values: data.map(function(d) {
-              return {date: d.date, y: d[name] / 100};
+              return {year: d.year, y: d[name] / 100};
             })
           };
         }));
       
-        x.domain(d3.extent(data, function(d) { return d.date; }));
+        x.domain(data.map(function(d) { return d.year; }));
       
         var browser = svg.selectAll(".browser")
             .data(browsers)
@@ -73,7 +72,7 @@ var stackedGraphic = ( function (){
       
         browser.append("text")
             .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
-            .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.y0 + d.value.y / 2) + ")"; })
+            .attr("transform", function(d) { return "translate(" + x(d.value.year) + "," + y(d.value.y0 + d.value.y / 2) + ")"; })
             .attr("x", -6)
             .attr("dy", ".35em")
             .text(function(d) { return d.name; });
@@ -82,7 +81,7 @@ var stackedGraphic = ( function (){
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
             .call(xAxis);
-               
+
 
         svg.append("g")
             .attr("class", "y axis")

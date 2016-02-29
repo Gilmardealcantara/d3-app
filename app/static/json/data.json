@@ -1,61 +1,61 @@
 [{
-    "date": "2001",
+    "year": "2001",
     "IE": "42.1",
     "Chrome": "22.45",
     "Firefox": "25.18",
     "Safari": "8.97",
     "Opera": "1.2"
 }, {
-    "date": "2002",
+    "year": "2002",
     "IE": "41.85",
     "Chrome": "22.91",
     "Firefox": "24.99",
     "Safari": "8.93",
     "Opera": "1.22"
 }, {
-    "date": "2003",
+    "year": "2003",
     "IE": "35.8",
     "Chrome": "27.08",
     "Firefox": "25.06",
     "Safari": "10.57",
     "Opera": "1.4"
 }, {
-    "date": "2004",
+    "year": "2004",
     "IE": "39.39 ",
     "Chrome": "25.28",
     "Firefox": "24.69",
     "Safari": "9.31",
     "Opera": "1.22"
 }, {
-    "date": "2005",
+    "year": "2005",
     "IE": "39.53",
     "Chrome": "26.02",
     "Firefox": " 24.31",
     "Safari": "8.7",
     "Opera": "1.35"
 }, {
-    "date": "2006",
+    "year": "2006",
     "IE": "34.67",
     "Chrome": "28.54",
     "Firefox": "24.64",
     "Safari": "10.62",
     "Opera": "1.43"
 }, {
-    "date": "2007",
+    "year": "2007",
     "IE": "38.76",
     "Chrome": "26.36",
     "Firefox": "24.52",
     "Safari": "8.94",
     "Opera": "1.33"
 }, {
-    "date": "2008",
+    "year": "2008",
     "IE": "39.05",
     "Chrome": "26.38",
     "Firefox": "24.37",
     "Safari": "8.76",
     "Opera": "1.34"
 }, {
-    "date": "2009",
+    "year": "2009",
     "IE": "38.21",
     "Chrome": "26.83",
     "Firefox": "24.43",
