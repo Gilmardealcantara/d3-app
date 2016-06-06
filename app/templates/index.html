@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<head>
-  <title>Map Stacked</title>
-  <script src="//d3js.org/d3.v3.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+{% extends "header.html" %}
 
-  <H1><FONT FACE="Arial" SIZE="4" COLOR="black">Comparing use of browsers</FONT></H1>
-  <H2><FONT FACE="Arial" SIZE="2" COLOR="blue">Graphic Stacked</FONT></H2>
+{% block content %}
+    <section id="objeto"></section>
+    <input id="fade" type="button" value="active" width="50px" height="20px">
 
-</header>
-  
-<body>
-<script type=text/javascript src="/static/js/stacked.js"></script>
-<script type=text/javascript src="/static/js/stacked-controler.js"></script>
-<link type="text/css" rel="stylesheet" href="static/css/style.css"/>
 
-</body>
+	<link type="text/css" rel="stylesheet" href="static/css/style.css"/>
+	<script type=text/javascript src="/static/js/home.js"></script>
+{% endblock content %}
